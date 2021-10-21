@@ -1,16 +1,20 @@
-# This is a sample Python script.
+from selenium import webdriver
 
-# Press ⌃R to execute it or replace it with your code.
-# Press Double ⇧ to search everywhere for classes, files, tool windows, actions, and settings.
+# Initiate driver
+options = webdriver.ChromeOptions()
+options.binary_location = ('/usr/local/bin/chromedriver')
+options.add_argument('headless')
+options.add_argument('no-sandbox')
+options.add_argument('disable-gpu')
+options.add_argument('disable-dev-shm-usage')
+options.add_argument('window-size=1200x600')
+driver = webdriver.Chrome(chrome_options=options)
 
+# Example
+driver.get('https://www.google.co.il')
+title = driver.title
+print(title.encode('utf-8'))
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press ⌘F8 to toggle the breakpoint.
-
-
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+# Release memory
+driver.quit()
+driver.close()
