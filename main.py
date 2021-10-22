@@ -1,20 +1,18 @@
+import time
 from selenium import webdriver
 
-# Initiate driver
-options = webdriver.ChromeOptions()
-options.binary_location = ('/usr/local/bin/chromedriver')
-options.add_argument('headless')
-options.add_argument('no-sandbox')
-options.add_argument('disable-gpu')
-options.add_argument('disable-dev-shm-usage')
-options.add_argument('window-size=1200x600')
-driver = webdriver.Chrome(chrome_options=options)
+driver = webdriver.Chrome('/Users/moshe_ogalbo/test/chromedriver')  # Optional argument, if not specified will search path.
 
-# Example
-driver.get('https://www.google.co.il')
-title = driver.title
-print(title.encode('utf-8'))
+driver.get('http://www.google.com/');
 
-# Release memory
+time.sleep(5) # Let the user actually see something!
+
+search_box = driver.find_element_by_name('q')
+
+search_box.send_keys('ChromeDriver')
+
+search_box.submit()
+
+time.sleep(5) # Let the user actually see something!
+
 driver.quit()
-driver.close()
