@@ -1,9 +1,9 @@
 import time
 
 from selenium import webdriver
+import unittest
 
-
-
+#def test (name)
 driver = webdriver.Chrome("/Users/moshe_ogalbo/test/chromedriver")  # Optional argument, if not specified will search path.
 
 driver.get('https://www.ynet.co.il/')
