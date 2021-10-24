@@ -1,21 +1,23 @@
 import time
-
 from selenium import webdriver
 import unittest
 
-#def test (name)
-driver = webdriver.Chrome("/Users/moshe_ogalbo/test/chromedriver")  # Optional argument, if not specified will search path.
+def print_hi(name):
+    driver = webdriver.Chrome("/Users/moshe_ogalbo/test/chromedriver")
+    driver.maximize_window()
+    driver.get('https://www.ynet.co.il/')
 
-driver.get('https://www.ynet.co.il/')
+    time.sleep(5)
 
-time.sleep(5) # Let the user actually see something!
+    search_box = driver.find_elements_by_class_name("textDiv").find_element_by_tag_name("topStoryDate")
 
-search_box = driver.find_element_by_name('q')
+    print(search_box)
 
-search_box.send_keys('ChromeDriver')
 
-search_box.submit()
 
-time.sleep(5) # Let the user actually see something!
+    time.sleep(5)
 
-driver.quit()
+    driver.quit()
+
+if __name__ == '__main__':
+    print_hi('name')
