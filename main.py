@@ -6,7 +6,7 @@ from selenium import webdriver
 
 driver = webdriver.Chrome("/Users/moshe_ogalbo/test/chromedriver")  # Optional argument, if not specified will search path.
 
-driver.get('http://www.google.com/');
+driver.get('https://www.ynet.co.il/')
 
 time.sleep(5) # Let the user actually see something!
 
