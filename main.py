@@ -24,7 +24,6 @@ def print_hi(name):
     driver.refresh()
     print(search_box)
     driver.close()
-    driver.find_element(By.ID,)
 
 
 if __name__ == '__main__':
