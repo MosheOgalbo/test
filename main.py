@@ -20,8 +20,7 @@ def print_hi(name):
     #wait = WebDriverWait(driver, 50)
 
     #wait.until(driver.find_element_by_class_name("slick-track").aria_role)
-    search_box = driver.find_elements_by_class_name("textDiv").\
-        find_elements_by_class_name("topStoryDate").text
+    search_box = driver.find_element_by_class_name("topStoryDate").text
     driver.refresh()
     print(search_box)
     driver.close()
