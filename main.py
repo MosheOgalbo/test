@@ -5,23 +5,23 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as ec
 driver = webdriver.Chrome("/Users/moshe_ogalbo/test/chromedriver")
+driver.implicitly_wait(10)
 driver.maximize_window()
 
 
 def print_hi(name):
 
-    driver.implicitly_wait(1)
+
     driver.get('https://www.ynet.co.il/')
 
     print(driver.current_url)
     print(driver.title)
-    time.sleep(5)
-
-    #wait = WebDriverWait(driver, 50)
-
-    #wait.until(driver.find_element_by_class_name("slick-track").aria_role)
+    time.sleep(2)
     search_box = driver.find_element_by_class_name("topStoryDate").text
     driver.refresh()
+
+
+
     print(search_box)
     driver.close()
 
