@@ -5,6 +5,7 @@ import time
 
 
 class LoginTest(unittest.TestCase):
+
     @classmethod
     def setUpClass(cls):
         """
@@ -29,7 +30,9 @@ class LoginTest(unittest.TestCase):
         self.driver.back()
 
 
+    """
     #def open_login(self):
+    """
 
 
     @classmethod
