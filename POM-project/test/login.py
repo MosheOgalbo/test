@@ -22,8 +22,8 @@ class LoginTest(unittest.TestCase):
 
         """
         self.driver.get('https://www.ynet.co.il')
-        self.driver.current_url
-        self.driver.title
+        print(self.driver.current_url)
+        print(self.driver.title)
         login = self.driver.find_element_by_class_name("login_premium")
         login.click()
         self.driver.back()
